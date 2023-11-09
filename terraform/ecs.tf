@@ -9,8 +9,6 @@ resource "aws_ecs_cluster" "ecs_cluster" {
 
 #The Task Definition used in conjunction with the ECS service
 resource "aws_ecs_task_definition" "task_definition" {
-    count = var.aws_ecs_task_definition ? 1 : 0
-
     family                              = "test-family"
     # container definitions describes the configurations for the task
     container_definitions               = jsonencode(
@@ -48,8 +46,6 @@ resource "aws_ecs_task_definition" "task_definition" {
 
 #The ECS service described. This resources allows you to manage tasks
 resource "aws_ecs_service" "ecs_service" {
-    count = var.aws_ecs_service ? 1: 0
-
     name                                = "ecs-service"
     cluster                             = aws_ecs_cluster.ecs_cluster.arn
     task_definition                     = aws_ecs_task_definition.task_definition.arn
