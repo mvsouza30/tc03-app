@@ -14,7 +14,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     container_definitions               = jsonencode(
     [
     {
-        "name"                          : "test-container",
+        "name"                          : "container",
         "image"                         : "${aws_ecr_repository.ecr.repository_url}:latest",
         "entryPoint"                    : [],
         "essential"                     : true,
@@ -35,7 +35,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     }
     ] 
     )
-    #Fargate is used as opposed to EC2, so we do not need to manage the EC2 instances. Fargate is serveless
+    # Fargate
     requires_compatibilities            = ["FARGATE"]
     network_mode                        = "awsvpc"
     cpu                                 = "256"
@@ -51,7 +51,7 @@ resource "aws_ecs_service" "ecs_service" {
     task_definition                     = aws_ecs_task_definition.task_definition.arn
     launch_type                         = "FARGATE"
     scheduling_strategy                 = "REPLICA"
-    desired_count                       = 2 # the number of tasks you wish to run
+    desired_count                       = 2
 
   network_configuration {
     subnets                             = [aws_subnet.private_subnet_1.id , aws_subnet.private_subnet_2.id]
