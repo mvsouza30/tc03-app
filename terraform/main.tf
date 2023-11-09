@@ -18,9 +18,9 @@ resource "aws_nat_gateway" "ngw" {
     depends_on              = [ aws_internet_gateway.igw ]
 }
 
-#resource "aws_eip" "nateip" {
-    #domain                  = "vpc"
-#}
+resource "aws_eip" "nateip" {
+    domain                  = "vpc"
+}
 
 resource "aws_subnet" "private_subnet_1" {
     vpc_id                  = aws_vpc.vpc.id
