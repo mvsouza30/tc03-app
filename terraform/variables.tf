@@ -67,7 +67,7 @@ variable "shared_credentials_files"{
 variable "credential_profile"{
   type        = string
   description = "AWS profile"
-  default     = "mvsouza"
+  default     = "/home/mvsouza/.aws/config"
 }
 
 variable "default_tags" {
