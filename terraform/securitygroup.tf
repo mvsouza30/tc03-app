@@ -1,6 +1,6 @@
 # Security group para ECS app
 resource "aws_security_group" "ecs_sg" {
-    vpc_id                      = aws_vpc.mainvpc.id
+    vpc_id                      = aws_vpc.vpc.id
     name                        = "sgecs"
     description                 = "Security group para ecs app"
     revoke_rules_on_delete      = true
@@ -30,7 +30,7 @@ resource "aws_security_group_rule" "ecs_all_egress" {
 
 # Security Group for alb
 resource "aws_security_group" "alb_sg" {
-    vpc_id                      = aws_vpc.mainvpc.id
+    vpc_id                      = aws_vpc.vpc.id
     name                        = "sgalb"
     description                 = "Security group for alb"
     revoke_rules_on_delete      = true
