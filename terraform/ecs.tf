@@ -14,7 +14,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     container_definitions               = jsonencode(
     [
     {
-        "name"                          : "container",
+        "name"                          : "app",
         "image"                         : "${aws_ecr_repository.ecr.repository_url}:latest",
         "entryPoint"                    : [],
         "essential"                     : true,
@@ -62,7 +62,7 @@ resource "aws_ecs_service" "ecs_service" {
 # This block registers the tasks to a target group of the loadbalancer.
   load_balancer {
     target_group_arn                    = aws_lb_target_group.target_group.arn
-    container_name                      = "container"
+    container_name                      = "app"
     container_port                      = var.container_port
   }
   depends_on                            = [aws_lb_listener.listener]
