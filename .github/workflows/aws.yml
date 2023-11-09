@@ -19,6 +19,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Terraform
+        run: |
+          cd /terraform  # Mude para o diretório /terraform
+          # Execute os comandos do Terraform aqui
+          terraform init
+          terraform plan
+          terraform apply -auto-approve
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -37,6 +45,7 @@ jobs:
           ECR_REPOSITORY: "app_repo"
           IMAGE_TAG: latest
         run: |
+          cd ..  # Volte para o diretório raiz do repositório
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
