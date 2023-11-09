@@ -52,6 +52,12 @@ variable "availibilty_zone_2" {
   default     = "us-east-1b"
 }
 
+variable "credential_profile"{
+  type        = string
+  description = "Meu perfil"
+  default     = "mvsouza"
+}
+
 variable "default_tags" {
   type = map
   default = {
