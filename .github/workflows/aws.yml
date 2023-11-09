@@ -21,7 +21,7 @@ jobs:
 
       - name: Terraform
         run: |
-          cd /terraform  # Mude para o diretório /terraform
+          cd terraform 
           # Execute os comandos do Terraform aqui
           terraform init
           terraform plan
