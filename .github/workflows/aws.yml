@@ -23,7 +23,7 @@ jobs:
         run: |
           cd terraform 
           # Execute os comandos do Terraform aqui
-          terraform init
+          terraform init -upgrade
           terraform plan
           terraform apply -auto-approve
 
