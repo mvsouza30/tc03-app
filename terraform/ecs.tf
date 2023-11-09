@@ -16,7 +16,7 @@ resource "aws_ecs_task_definition" "task_definition" {
     {
         "name"                          : "test-container",
         "image"                         : "${aws_ecr_repository.ecr.repository_url}:latest",
-        "entryPoint"                    : []
+        "entryPoint"                    : [],
         "essential"                     : true,
         "networkMode"                   : "awsvpc",
         "portMappings"                  : [
