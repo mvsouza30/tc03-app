@@ -19,7 +19,6 @@ resource "aws_nat_gateway" "ngw" {
 }
 
 resource "aws_eip" "nateip" {
-    domain                  = "vpc"
 }
 
 resource "aws_subnet" "private_subnet_1" {
