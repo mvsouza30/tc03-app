@@ -59,15 +59,3 @@ variable "default_tags" {
     Environment = "Prod"
   }
 }
-
-variable "access_key_id" {
-  type = string
-  description = "AWS_ID"
-  default = ""
-}
-
-variable "secret_key" {
-  type = string
-  description = ""
-  default = ""
-}
