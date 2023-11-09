@@ -41,13 +41,12 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         id: build-image
         env:
-          ECR_REGISTRY: "986484482029.dkr.ecr.us-east-1.amazonaws.com/repo"
+          ECR_REGISTRY: "986484482029.dkr.ecr.us-east-1.amazonaws.com"
           ECR_REPOSITORY: "repo"
           IMAGE_TAG: latest
         run: |
-          cd ..  # Volte para o diretório raiz do repositório
-          pwd    # Printa path
-          ls -l  # Lista dados
+          pwd
+          ls
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
