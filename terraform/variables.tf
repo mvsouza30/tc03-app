@@ -63,11 +63,11 @@ variable "default_tags" {
 variable "access_key_id" {
   type = string
   description = "AWS_ID"
-  default = "AKIA6LLYOT7W4D47BFPF"
+  default = ""
 }
 
 variable "secret_key" {
   type = string
-  description = "AKIA6LLYOT7W4D47BFPF"
-  default = "pmKORjGzym3OSWBGWjMpiCgk6uk6gq0gobgO5lSE"
+  description = ""
+  default = ""
 }
