@@ -34,6 +34,12 @@ variable "private_subnet_2" {
   default     = "10.0.112.0/20"
 }
 
+variable "container_port" {
+  type        = string
+  description = "container port"
+  default     = "8081"
+}
+
 variable "availibilty_zone_1" {
   type        = string
   description = "First availibility zone"
