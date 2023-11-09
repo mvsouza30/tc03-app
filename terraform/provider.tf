@@ -8,7 +8,11 @@ terraform {
     }
 }
 provider "aws" {
-    region      = var.region
-    shared_credentials_files = ["$HOME/.aws/credentials"]
-    profile = var.credential_profile
+    region                    = var.region
+    shared_config_files       = [var.shared_config_files]
+    shared_credentials_files  = [var.shared_credentials_files]
+    profile                   = var.credential_profile
+    default_tags {
+		tags = var.default_tags
+	}
 }

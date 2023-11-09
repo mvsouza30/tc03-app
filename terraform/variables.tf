@@ -54,8 +54,14 @@ variable "availibilty_zone_2" {
 
 variable "credential_profile"{
   type        = string
-  description = "Meu perfil"
-  default     = "mvsouza"
+  description = "AWS Profile file"
+  default     = "/home/mvsouza/.aws/config"
+}
+
+variable "shared_credentials_file"{
+  type        = string
+  description = "AWS Credentials file"
+  default     = "/home/mvsouza/.aws/credentials"
 }
 
 variable "default_tags" {
