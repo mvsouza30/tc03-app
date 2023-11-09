@@ -55,13 +55,13 @@ variable "availibilty_zone_2" {
 variable "shared_config_files"{
   type        = string
   description = "AWS Profile file"
-  default     = "/home/mvsouza/.aws/config"
+  default     = "~/.aws/config"
 }
 
 variable "shared_credentials_files"{
   type        = string
   description = "AWS Credentials file"
-  default     = "/home/mvsouza/.aws/credentials"
+  default     = "~/.aws/credentials"
 }
 
 #variable "credential_profile"{
