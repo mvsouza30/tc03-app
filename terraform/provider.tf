@@ -9,5 +9,6 @@ terraform {
 }
 provider "aws" {
     region      = var.region
-    shared_credentials_files = ["/home/mvsouza/.aws/credentials"]
+    shared_credentials_files = ["$HOME/.aws/credentials"]
+    profile = var.credential_profile
 }
