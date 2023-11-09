@@ -52,13 +52,13 @@ variable "availibilty_zone_2" {
   default     = "us-east-1b"
 }
 
-variable "credential_profile"{
+variable "shared_config_files"{
   type        = string
   description = "AWS Profile file"
   default     = "/home/mvsouza/.aws/config"
 }
 
-variable "shared_credentials_file"{
+variable "shared_credentials_files"{
   type        = string
   description = "AWS Credentials file"
   default     = "/home/mvsouza/.aws/credentials"
