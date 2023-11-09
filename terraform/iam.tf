@@ -3,6 +3,8 @@
 ########################################################################################
 
 resource "aws_iam_role" "ecsTaskExecutionRole" {
+    count var.aws_iam_role ? 1 : 0
+
     name                  = "app-ecsTaskExecutionRole"
     assume_role_policy    = data.aws_iam_policy_document.assume_role_policy.json
 }
@@ -24,11 +26,13 @@ resource "aws_iam_role_policy_attachment" "ecsTaskExecutionRole_policy" {
 }
 
 resource "aws_iam_role" "ecsTaskRole" {
+    count var.aws_iam_role ? 1 : 0
     name                  = "ecsTaskRole"
     assume_role_policy    = data.aws_iam_policy_document.assume_role_policy.json   
 }
 
 resource "aws_iam_role_policy_attachment" "ecsTaskRole_policy" {
+    count var.aws_iam_role_policy_attachment ? 1 : 0
     role                  = aws_iam_role.ecsTaskRole.name
     policy_arn            = "arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess"
 }
