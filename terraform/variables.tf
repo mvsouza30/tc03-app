@@ -64,6 +64,12 @@ variable "shared_credentials_files"{
   default     = "/home/mvsouza/.aws/credentials"
 }
 
+variable "profile"{
+  type        = string
+  description = "AWS profile"
+  default     = "mvsouza"
+}
+
 variable "default_tags" {
   type = map
   default = {
