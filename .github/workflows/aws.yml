@@ -46,6 +46,8 @@ jobs:
           IMAGE_TAG: latest
         run: |
           cd ..  # Volte para o diretório raiz do repositório
+          pwd    # Printa path
+          ls -l  # Lista dados
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
