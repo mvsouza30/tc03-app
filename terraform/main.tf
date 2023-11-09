@@ -3,7 +3,7 @@
 ###################################################################################
 
 resource "aws_vpc" "vpc" {
-    count var.aws_vpc ? 1 : 0
+    count = var.aws_vpc ? 1 : 0
 
     cidr_block              = var.vpc_cidr
     enable_dns_hostnames    = true
@@ -11,12 +11,12 @@ resource "aws_vpc" "vpc" {
 }
 
 resource "aws_internet_gateway" "igw" {
-    count var.aws_internet_gateway ? 1 : 0
+    count = var.aws_internet_gateway ? 1 : 0
     vpc_id                  = aws_vpc.vpc.id
 }
 
 resource "aws_nat_gateway" "ngw" {
-    count var.aws_nat_gateway ? 1 : 0
+    count = var.aws_nat_gateway ? 1 : 0
 
     allocation_id           = aws_eip.nateip.id
     subnet_id               = aws_subnet.public_subnet_1.id
@@ -24,7 +24,7 @@ resource "aws_nat_gateway" "ngw" {
 }
 
 resource "aws_eip" "nateip" {
-    count var.aws_eip ? 1 : 0
+    count = var.aws_eip ? 1 : 0
     domain                  = "vpc"
 }
 
