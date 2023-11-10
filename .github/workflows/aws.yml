@@ -22,7 +22,7 @@ jobs:
       - name: Debug AWS Config
         run: |
           env
-          aws configure list --profile test-1
+          aws configure list --profile default
 
 
       - name: Terraform
