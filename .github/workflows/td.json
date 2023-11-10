@@ -20,8 +20,8 @@
         }
     ],
     "family": "app",
-    "taskRoleArn": "arn:aws:iam::986484482029:role/ecsTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::986484482029:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::986484482029:role/app-ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::986484482029:role/app-ecsTaskExecutionRole",
     "networkMode": "awsvpc",
     "volumes": [],
     "status": "ACTIVE",

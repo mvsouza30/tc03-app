@@ -51,7 +51,7 @@ resource "aws_ecs_service" "ecs_service" {
     task_definition                     = aws_ecs_task_definition.task_definition.arn
     launch_type                         = "FARGATE"
     scheduling_strategy                 = "REPLICA"
-    desired_count                       = 1
+    desired_count                       = 2
 
   network_configuration {
     subnets                             = [aws_subnet.private_subnet_1.id , aws_subnet.private_subnet_2.id]
