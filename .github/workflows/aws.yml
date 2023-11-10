@@ -31,8 +31,7 @@ jobs:
         run: |
           cd terraform 
           # Execute os comandos do Terraform aqui
-          terraform init -upgrade
-          terraform plan
+          terraform init
           terraform apply -auto-approve
 
       - name: Login to Amazon ECR
