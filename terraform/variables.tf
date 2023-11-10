@@ -52,23 +52,23 @@ variable "availibilty_zone_2" {
   default     = "us-east-1b"
 }
 
-#variable "shared_config_files"{
-  #type        = string
-  #description = "AWS Profile file"
-  #default     = "~/.aws/config"
-#}
+variable "shared_config_files"{
+  type        = string
+  description = "AWS Profile file"
+  default     = "~/.aws/config"
+}
 
-#variable "shared_credentials_files"{
-  #type        = string
-  #description = "AWS Credentials file"
-  #default     = "~/.aws/credentials"
-#}
+variable "shared_credentials_files"{
+  type        = string
+  description = "AWS Credentials file"
+  default     = "~/.aws/credentials"
+}
 
-#variable "credential_profile"{
-  #type        = string
-  #description = "AWS profile"
-  #default     = "default"
-#}
+variable "credential_profile"{
+  type        = string
+  description = "AWS profile"
+  default     = "default"
+}
 
 #variable "default_tags" {
   #type = map
