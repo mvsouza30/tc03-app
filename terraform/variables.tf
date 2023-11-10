@@ -67,7 +67,7 @@ variable "availibilty_zone_2" {
 variable "credential_profile"{
   type        = string
   description = "AWS profile"
-  default     = "default"
+  default     = "mvsouza"
 }
 
 variable "default_tags" {
