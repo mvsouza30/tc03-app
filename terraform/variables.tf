@@ -70,10 +70,10 @@ variable "availibilty_zone_2" {
   #default     = "default"
 #}
 
-variable "default_tags" {
-  type = map
-  default = {
-    Application = "App"
-    Environment = "Prod"
-  }
-}
+#variable "default_tags" {
+  #type = map
+  #default = {
+    #Application = "App"
+    #Environment = "Prod"
+  #}
+#}
