@@ -4,8 +4,8 @@
         {
             "name": "app",
             "image": "986484482029.dkr.ecr.us-east-1.amazonaws.com/app",
-            "cpu": 256,
-            "memory": 512,
+            "cpu": 512,
+            "memory": 1024,
             "portMappings": [
                 {
                     "containerPort": 80,
@@ -50,8 +50,8 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "256",
-    "memory": "512",
+    "cpu": "512",
+    "memory": "1024",
     "registeredAt": "2023-11-03T03:07:51.239Z",
     "registeredBy": "arn:aws:iam::986484482029:user/mvsouza",
     "tags": []
