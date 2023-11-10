@@ -1,9 +1,9 @@
 resource "aws_ecs_cluster" "ecs"{
-    name = "app_cluster"
+    name = "ecs-cluster"
 }
 
 resource "aws_ecs_service" "service"{
-    name = "app_service"
+    name = "ecs-service"
     cluster                = aws_ecs_cluster.ecs.arn
     launch_type            = "FARGATE"
     enable_execute_command = true
