@@ -64,11 +64,11 @@ variable "availibilty_zone_2" {
   #default     = "~/.aws/credentials"
 #}
 
-variable "credential_profile"{
-  type        = string
-  description = "AWS profile"
-  default     = "mvsouza"
-}
+#variable "credential_profile"{
+  #type        = string
+  #description = "AWS profile"
+  #default     = "default"
+#}
 
 variable "default_tags" {
   type = map
