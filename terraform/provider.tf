@@ -1,5 +1,5 @@
 terraform {
-  aws {
+  cloud {
     organization = "mvsouza_studies"
 
     workspaces {
