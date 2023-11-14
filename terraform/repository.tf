@@ -1,19 +1,12 @@
-#################################################################################################
-# This file describes the ECR resources: ECR repo, ECR policy, resources to build and push image
-#################################################################################################
-
-#Creation of the ECR repo
 resource "aws_ecr_repository" "ecr" {
     name                            = "repo"
 }
 
-#The ECR policy describes the management of images in the repo
 resource "aws_ecr_lifecycle_policy" "ecr_policy" {
     repository                      = aws_ecr_repository.ecr.name
     policy                          = local.ecr_policy
 }
 
-#This is the policy defining the rules for images in the repo
 locals {
   ecr_policy = jsonencode({
         "rules":[
