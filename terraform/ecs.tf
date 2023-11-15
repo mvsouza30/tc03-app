@@ -2,7 +2,6 @@ resource "aws_ecs_cluster" "ecs"{
     name = "ecs-cluster"
 }
 
-
 resource "aws_ecs_service" "service"{
     name = "ecs-service"
     cluster                = aws_ecs_cluster.ecs.arn
