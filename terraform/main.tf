@@ -25,6 +25,11 @@ resource "aws_subnet" "sn3"{
     map_public_ip_on_launch = true
 }
 
+# Internet Gateway para criação da Task do ECS Fargate
+resource "aws_internet_gateway" "gw" {
+  vpc_id = aws_vpc.mainvpc.id
+}
+
 resource "aws_security_group" "sg"{
     name    = "sg"
     vpc_id  = aws_vpc.mainvpc.id
