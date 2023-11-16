@@ -42,7 +42,7 @@ resource "aws_security_group" "sg"{
         from_port   = 443
         to_port     = 443
         protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
+        cidr_blocks = ["191.5.227.137/32"] #Apenas meu IP
     }
 
     ingress{
@@ -50,7 +50,7 @@ resource "aws_security_group" "sg"{
         from_port   = 80
         to_port     = 80
         protocol    = "tcp"
-        cidr_blocks = ["0.0.0.0/0"]
+        cidr_blocks = ["191.5.227.137/32"] #Apenas meu IP
     }
 
     egress{
@@ -59,37 +59,4 @@ resource "aws_security_group" "sg"{
         protocol    = "-1"
         cidr_blocks = ["0.0.0.0/0"]
     }
-}
-
-resource "aws_internet_gateway" "gw" {
-  vpc_id = aws_vpc.mainvpc.id
-}
-
-resource "aws_route_table" "rt" {
-  vpc_id = aws_vpc.mainvpc.id
-
-  route {
-    cidr_block = "172.31.4.0/16"
-    gateway_id = aws_internet_gateway.gw.id
-  }
-
-  route {
-    ipv6_cidr_block = "::/0"
-    gateway_id      = aws_internet_gateway.gw.id
-  }
-}
-
-resource "aws_route_table_association" "route1" {
-  route_table_id = aws_route_table.rt.id
-  subnet_id      = aws_subnet.sn1.id
-}
-
-resource "aws_route_table_association" "route2" {
-  route_table_id = aws_route_table.rt.id
-  subnet_id      = aws_subnet.sn2.id
-}
-
-resource "aws_route_table_association" "route3" {
-  route_table_id = aws_route_table.rt.id
-  subnet_id      = aws_subnet.sn3.id
 }
