@@ -67,11 +67,21 @@ resource "aws_internet_gateway" "gw" {
 }
 
 resource "aws_route_table" "rt" {
-  vpc_id = aws_vpc.default.id
+  vpc_id = aws_vpc.mainvpc.id
 
 # Rota para tasks
   route {
-    cidr_block = aws_subnet.mainvpc.cidr_block
+    cidr_block = aws_subnet.sn1.cidr_block
+    gateway_id = aws_internet_gateway.gw.id
+  }
+
+  route {
+    cidr_block = aws_subnet.sn2.cidr_block
+    gateway_id = aws_internet_gateway.gw.id
+  }
+
+  route {
+    cidr_block = aws_subnet.sn3.cidr_block
     gateway_id = aws_internet_gateway.gw.id
   }
 }
